@@ -1,0 +1,21 @@
+{
+    "responses": [
+        {
+            "responseId": "ACYDBNjTRsewpfEWKoPi9fyN73gmnhgsTFh9ow1GrcMy26kY03n3NxiB3eJD4OWVbcwtxys",
+            "createTime": "2025-05-12T00:12:27.178Z",
+            "lastSubmittedTime": "2025-05-12T00:12:27.178369Z",
+            "answers": {
+                "04e65d09": {
+                    "questionId": "04e65d09",
+                    "textAnswers": {
+                        "answers": [
+                            {
+                                "value": "A melhor plataforma de dados do mercado"
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,86 @@
+{
+    "requests": [
+        {
+            "createItem": {
+                "item": {
+                    "title": "Given Name",
+                    "questionItem": {
+                        "question": {
+                            "required": true,
+                            "textQuestion": {}
+                        }
+                    }
+                },
+                "location": {"index": 0}
+            }
+        },
+        {
+            "createItem": {
+                "item": {
+                    "title": "Family Name",
+                    "questionItem": {
+                        "question": {
+                            "required": true,
+                            "textQuestion": {}
+                        }
+                    }
+                },
+                "location": {"index": 1}
+            }
+        },
+        {
+            "createItem": {
+                "item": {
+                    "title": "Gender",
+                    "questionItem": {
+                        "question": {
+                            "required": true,
+                            "choiceQuestion": {
+                                "type": "RADIO",
+                                "options": [
+                                    {
+                                        "value": "Male"
+                                    },
+                                    {
+                                        "value": "Female"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                },
+                "location": {"index": 2}
+            }
+        },
+        {
+            "createItem": {
+                "item": {
+                    "title": "Birth Date",
+                    "questionItem": {
+                        "question": {
+                            "required": true,
+                            "dateQuestion": {
+                                "includeYear": true
+                            }
+                        }
+                    }
+                },
+                "location": {"index": 3}
+            }
+        },
+        {
+            "createItem": {
+                "item": {
+                    "title": "Phone",
+                    "questionItem": {
+                        "question": {
+                            "required": true,
+                            "textQuestion": {}
+                        }
+                    }
+                },
+                "location": {"index": 4}
+            }
+        }
+    ]
+}
