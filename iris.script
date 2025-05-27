@@ -15,7 +15,7 @@
     
     zn "%SYS"
     do $System.OBJ.LoadDir("/home/irisowner/irisdev/src","ck",,1)
-    Set spec("AutheEnabled") = $$$AutheUnauthenticated
+    Set spec("AutheEnabled") = 1
     Set spec("NameSpace") = "USER"
     Set spec("Description") = "API gforms health"
     Set spec("IsNameSpaceDefault") = $$$NO
