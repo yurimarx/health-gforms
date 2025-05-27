@@ -1,0 +1,223 @@
+{
+	"info": {
+		"_postman_id": "3e68dd3b-d180-448f-a841-1d6b507fcdf8",
+		"name": "health-gforms",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2548523"
+	},
+	"item": [
+		{
+			"name": "1. Post credentials",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "_SYSTEM",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "SYS",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/projetos/health-gforms/credentials.json"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:32783/health-gforms/credentials",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "32783",
+					"path": [
+						"health-gforms",
+						"credentials"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2. Post form definition",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "_SYSTEM",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "SYS",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/projetos/health-gforms/formpatient.json"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:32783/health-gforms/form/definition?name=formpatient",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "32783",
+					"path": [
+						"health-gforms",
+						"form",
+						"definition"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "formpatient"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3. Create form from file definition",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "_SYSTEM",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "SYS",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/projetos/health-gforms/formpatient.json"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:32783/health-gforms/form/create?formTitle=New Patient&name=formpatient",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "32783",
+					"path": [
+						"health-gforms",
+						"form",
+						"create"
+					],
+					"query": [
+						{
+							"key": "formTitle",
+							"value": "New Patient"
+						},
+						{
+							"key": "name",
+							"value": "formpatient"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4. Get form content from template",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "_SYSTEM",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "SYS",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/projetos/health-gforms/credentials.json"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:32783/health-gforms/form/template/content?formId=1ZSY90XicFHK7y3kzgV4Fv6YFQq2LLwly5kPqIHPwsyk&templatePath=createpatient",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "32783",
+					"path": [
+						"health-gforms",
+						"form",
+						"template",
+						"content"
+					],
+					"query": [
+						{
+							"key": "formId",
+							"value": "1ZSY90XicFHK7y3kzgV4Fv6YFQq2LLwly5kPqIHPwsyk"
+						},
+						{
+							"key": "templatePath",
+							"value": "createpatient"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

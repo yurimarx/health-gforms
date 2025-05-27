@@ -7,6 +7,23 @@ This is package collect data using google forms and save as resource into a FHIR
 
 ## Installation
 
+### Docker (e.g. for dev purposes)
+
+Clone/git pull the repo into any local directory
+
+```
+$ git clone https://github.com/yurimarx/health-gforms/health-gforms.git
+```
+
+Open the terminal in this directory and run:
+
+```
+$ docker-compose build
+$ docker-compose up -d
+```
+
+
+
 ### IPM
 
 Open IRIS for Health installation with IPM client installed. Call in any namespace:
@@ -21,18 +38,3 @@ Or call the following for installing programmatically:
 ```
 set sc=$zpm("install fhir-server")
 ```
-
-### Docker (e.g. for dev purposes)
-
-Clone/git pull the repo into any local directory
-
-```
-$ git clone https://github.com/yurimarx/health-gforms/health-gforms.git
-```
-
-Open the terminal in this directory and run:
-
-```
-$ docker-compose up -d
-```
-

@@ -12,6 +12,20 @@
     zn "USER"
     zpm "install fhir-portal"
     zpm "install swagger-ui"
+    
+    zn "%SYS"
+    do $System.OBJ.LoadDir("/home/irisowner/irisdev/src","ck",,1)
+    hang 2
+    Set spec("AutheEnabled") = $$$AutheUnauthenticated
+    Set spec("NameSpace") = "USER"
+    Set spec("Description") = "API gforms health"
+    Set spec("IsNameSpaceDefault") = $$$NO
+    Set spec("DispatchClass") = "User.GFormsAPI"
+    Set spec("MatchRoles")=":%All"
+    Set ret = ##class(Security.Applications).Create("/health-gforms", .spec)
+    hang 2
+    write "app criado: "_ret
+    hang 2
     zpm "load /home/irisowner/irisdev/ -v"
     #; Use FHIR.utils.install
     #; to add new FHIR servers

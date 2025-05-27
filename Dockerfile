@@ -27,9 +27,10 @@ FROM $IMAGE AS final
 
 ADD --chown=${ISC_PACKAGE_MGRUSER}:${ISC_PACKAGE_IRISGROUP} https://github.com/grongierisc/iris-docker-multi-stage-script/releases/latest/download/copy-data.py /irisdev/app/copy-data.py
 
-COPY credentials.json /opt/irisapp/credentials.json
+# COPY credentials.json /opt/irisapp/credentials.json
 COPY formpatient.json /opt/irisapp/formpatient.json
 COPY templates /opt/irisapp/
+COPY healthgforms.py /usr/irissys/mgr/python
 
 RUN --mount=type=bind,source=/,target=/builder/root,from=builder \
     cp -f /builder/root/usr/irissys/iris.cpf /usr/irissys/iris.cpf && \
