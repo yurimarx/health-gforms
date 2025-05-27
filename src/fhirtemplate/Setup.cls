@@ -1,9 +1,9 @@
 Class fhirtemplate.Setup
 {
 
-ClassMethod SetupFHIRServer(ns="FHIRSERVER",appKey="/fhir/r4",testLoad=1) As %Status
+ClassMethod SetupFHIRServer(ns = "FHIRSERVER", appKey = "/fhir/r4", testLoad = 1) As %Status
 {
-    set st=$$$OK
+    set st=$$$OK 
     Write !,"=== Initialization with parameters: Namespace: "_ns_", Webapp: "_appKey_", AddTestData: "_testLoad,!
     zn "HSLIB"
     set namespace=ns
@@ -46,7 +46,7 @@ ClassMethod LoadPatientData(path, namespace, appKey) As %Status
     quit ##class(HS.FHIRServer.Tools.DataLoader).SubmitResourceFiles(path, namespace, appKey)
 }
 
-ClassMethod AddApp(ns={$namespace}) As %Status
+ClassMethod AddApp(ns = {$namespace}) As %Status
 {
     set namespace=ns
     zn "%SYS"

@@ -39,10 +39,10 @@
                                 "type": "RADIO",
                                 "options": [
                                     {
-                                        "value": "Male"
+                                        "value": "male"
                                     },
                                     {
-                                        "value": "Female"
+                                        "value": "female"
                                     }
                                 ]
                             }
