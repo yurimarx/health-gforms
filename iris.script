@@ -18,7 +18,7 @@
     Set spec("AutheEnabled") = 1
     Set spec("NameSpace") = "USER"
     Set spec("Description") = "API gforms health"
-    Set spec("IsNameSpaceDefault") = $$$NO
+    Set spec("IsNameSpaceDefault") = 0
     Set spec("DispatchClass") = "User.GFormsAPI"
     Set spec("MatchRoles")=":%All"
     Set ret = ##class(Security.Applications).Create("/health-gforms", .spec)
