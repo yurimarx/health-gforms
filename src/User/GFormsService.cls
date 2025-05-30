@@ -80,14 +80,14 @@ ClassMethod GetFormFromId(formid As %String) [ Language = python ]
     return result
 }
 
-ClassMethod GetResponsesFromFormId(formid As %String) [ Language = python ]
+ClassMethod GetResponsesFromFormId(formid As %String, credentialsFile As %String = "/opt/irisapp/credentials.json") [ Language = python ]
 {
     import httplib2
     from oauth2client.service_account import ServiceAccountCredentials
     from googleapiclient.discovery import build
 
     credentials = ServiceAccountCredentials.from_json_keyfile_name(
-        "/opt/irisapp/credentials.json",
+        credentialsFile,
         scopes="https://www.googleapis.com/auth/forms.responses.readonly",
     )
 
@@ -103,9 +103,33 @@ ClassMethod GetResponsesFromFormId(formid As %String) [ Language = python ]
     return result
 }
 
-ClassMethod GetContentFromTemplateAndResponses(formid As %String, templatepath As %String) [ Language = python ]
+ClassMethod GetJSONResponsesFromFormId(formid As %String, credentialsFile As %String = "/opt/irisapp/credentials.json") [ Language = python ]
 {
     import httplib2
+    import json
+    from oauth2client.service_account import ServiceAccountCredentials
+    from googleapiclient.discovery import build
+
+    credentials = ServiceAccountCredentials.from_json_keyfile_name(
+        credentialsFile,
+        scopes="https://www.googleapis.com/auth/forms.responses.readonly",
+    )
+
+    # Create an httplib2.Http object to handle our HTTP requests and authorize
+    # it with the Credentials.
+    http = httplib2.Http()
+    http = credentials.authorize(http)
+
+    form_service = build("forms", "v1", http=http)
+
+    # Prints the responses of your specified form:
+    resultObj = form_service.forms().responses().list(formId=formid).execute()
+    return json.dumps(resultObj)
+}
+
+ClassMethod GetContentFromTemplateAndResponses(formid As %String, templatepath As %String) [ Language = python ]
+{
+    import httplib2 
     import json
     from oauth2client.service_account import ServiceAccountCredentials
     from googleapiclient.discovery import build
